@@ -9,11 +9,23 @@
 /* Begin PBXBuildFile section */
 		B53DBEEF1B5D3AB600665CDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53DBEEE1B5D3AB600665CDA /* AppDelegate.swift */; };
 		B53DBEF21B5D3AB600665CDA /* SliderControl.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B53DBEF01B5D3AB600665CDA /* SliderControl.xcdatamodeld */; };
-		B53DBEF41B5D3AB600665CDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53DBEF31B5D3AB600665CDA /* ViewController.swift */; };
-		B53DBEF71B5D3AB600665CDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B53DBEF51B5D3AB600665CDA /* Main.storyboard */; };
-		B53DBEF91B5D3AB600665CDA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53DBEF81B5D3AB600665CDA /* Images.xcassets */; };
 		B53DBEFC1B5D3AB600665CDA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B53DBEFA1B5D3AB600665CDA /* LaunchScreen.xib */; };
 		B53DBF081B5D3AB600665CDA /* SliderControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53DBF071B5D3AB600665CDA /* SliderControlTests.swift */; };
+		B53DBF1C1B5D3AFA00665CDA /* AxisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53DBF111B5D3AFA00665CDA /* AxisView.swift */; };
+		B53DBF1D1B5D3AFA00665CDA /* BezierHandles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53DBF121B5D3AFA00665CDA /* BezierHandles.swift */; };
+		B53DBF1F1B5D3AFA00665CDA /* CalcTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53DBF141B5D3AFA00665CDA /* CalcTime.swift */; };
+		B53DBF211B5D3AFA00665CDA /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53DBF161B5D3AFA00665CDA /* CustomTextField.swift */; };
+		B53DBF221B5D3AFA00665CDA /* DotPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53DBF171B5D3AFA00665CDA /* DotPreview.swift */; };
+		B53DBF231B5D3AFA00665CDA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53DBF181B5D3AFA00665CDA /* Images.xcassets */; };
+		B53DBF241B5D3AFA00665CDA /* RealtimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53DBF191B5D3AFA00665CDA /* RealtimeViewController.swift */; };
+		B53DBF251B5D3AFA00665CDA /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53DBF1A1B5D3AFA00665CDA /* TransitionManager.swift */; };
+		B53DBF261B5D3AFA00665CDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53DBF1B1B5D3AFA00665CDA /* ViewController.swift */; };
+		B53DBF2C1B5D3BA500665CDA /* BTDiscovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53DBF291B5D3BA500665CDA /* BTDiscovery.swift */; };
+		B53DBF2D1B5D3BA500665CDA /* BTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53DBF2A1B5D3BA500665CDA /* BTService.swift */; };
+		B53DBF311B5D3CDE00665CDA /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53DBF301B5D3CDE00665CDA /* TimeViewController.swift */; };
+		B53DBF331B5D3D0C00665CDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B53DBF321B5D3D0C00665CDA /* Main.storyboard */; };
+		B53DBF351B5D3F1000665CDA /* BezierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53DBF341B5D3F1000665CDA /* BezierViewController.swift */; };
+		B53DBF371B5E0AD400665CDA /* Timelapse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53DBF361B5E0AD400665CDA /* Timelapse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +43,25 @@
 		B53DBEED1B5D3AB600665CDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B53DBEEE1B5D3AB600665CDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B53DBEF11B5D3AB600665CDA /* SliderControl.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SliderControl.xcdatamodel; sourceTree = "<group>"; };
-		B53DBEF31B5D3AB600665CDA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B53DBEF61B5D3AB600665CDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B53DBEF81B5D3AB600665CDA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B53DBEFB1B5D3AB600665CDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B53DBF011B5D3AB600665CDA /* SliderControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SliderControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B53DBF061B5D3AB600665CDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B53DBF071B5D3AB600665CDA /* SliderControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderControlTests.swift; sourceTree = "<group>"; };
+		B53DBF111B5D3AFA00665CDA /* AxisView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AxisView.swift; path = ../AxisView.swift; sourceTree = "<group>"; };
+		B53DBF121B5D3AFA00665CDA /* BezierHandles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BezierHandles.swift; path = ../BezierHandles.swift; sourceTree = "<group>"; };
+		B53DBF141B5D3AFA00665CDA /* CalcTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalcTime.swift; path = ../CalcTime.swift; sourceTree = "<group>"; };
+		B53DBF161B5D3AFA00665CDA /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTextField.swift; path = ../CustomTextField.swift; sourceTree = "<group>"; };
+		B53DBF171B5D3AFA00665CDA /* DotPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DotPreview.swift; path = ../DotPreview.swift; sourceTree = "<group>"; };
+		B53DBF181B5D3AFA00665CDA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
+		B53DBF191B5D3AFA00665CDA /* RealtimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealtimeViewController.swift; path = ../RealtimeViewController.swift; sourceTree = "<group>"; };
+		B53DBF1A1B5D3AFA00665CDA /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitionManager.swift; path = ../TransitionManager.swift; sourceTree = "<group>"; };
+		B53DBF1B1B5D3AFA00665CDA /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
+		B53DBF291B5D3BA500665CDA /* BTDiscovery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTDiscovery.swift; sourceTree = "<group>"; };
+		B53DBF2A1B5D3BA500665CDA /* BTService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTService.swift; sourceTree = "<group>"; };
+		B53DBF301B5D3CDE00665CDA /* TimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
+		B53DBF321B5D3D0C00665CDA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B53DBF341B5D3F1000665CDA /* BezierViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierViewController.swift; sourceTree = "<group>"; };
+		B53DBF361B5E0AD400665CDA /* Timelapse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timelapse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +103,13 @@
 		B53DBEEB1B5D3AB500665CDA /* SliderControl */ = {
 			isa = PBXGroup;
 			children = (
+				B53DBF391B5E0EA300665CDA /* Custom Classes */,
+				B53DBF381B5E0E8A00665CDA /* ViewControllers */,
+				B53DBF321B5D3D0C00665CDA /* Main.storyboard */,
+				B53DBF3A1B5E0EBA00665CDA /* View Classes */,
+				B53DBF181B5D3AFA00665CDA /* Images.xcassets */,
+				B53DBF1B1B5D3AFA00665CDA /* ViewController.swift */,
 				B53DBEEE1B5D3AB600665CDA /* AppDelegate.swift */,
-				B53DBEF31B5D3AB600665CDA /* ViewController.swift */,
-				B53DBEF51B5D3AB600665CDA /* Main.storyboard */,
-				B53DBEF81B5D3AB600665CDA /* Images.xcassets */,
 				B53DBEFA1B5D3AB600665CDA /* LaunchScreen.xib */,
 				B53DBEF01B5D3AB600665CDA /* SliderControl.xcdatamodeld */,
 				B53DBEEC1B5D3AB600665CDA /* Supporting Files */,
@@ -113,6 +140,39 @@
 				B53DBF061B5D3AB600665CDA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B53DBF381B5E0E8A00665CDA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B53DBF341B5D3F1000665CDA /* BezierViewController.swift */,
+				B53DBF301B5D3CDE00665CDA /* TimeViewController.swift */,
+				B53DBF191B5D3AFA00665CDA /* RealtimeViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B53DBF391B5E0EA300665CDA /* Custom Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B53DBF361B5E0AD400665CDA /* Timelapse.swift */,
+				B53DBF291B5D3BA500665CDA /* BTDiscovery.swift */,
+				B53DBF2A1B5D3BA500665CDA /* BTService.swift */,
+				B53DBF141B5D3AFA00665CDA /* CalcTime.swift */,
+			);
+			name = "Custom Classes";
+			sourceTree = "<group>";
+		};
+		B53DBF3A1B5E0EBA00665CDA /* View Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B53DBF1A1B5D3AFA00665CDA /* TransitionManager.swift */,
+				B53DBF111B5D3AFA00665CDA /* AxisView.swift */,
+				B53DBF121B5D3AFA00665CDA /* BezierHandles.swift */,
+				B53DBF161B5D3AFA00665CDA /* CustomTextField.swift */,
+				B53DBF171B5D3AFA00665CDA /* DotPreview.swift */,
+			);
+			name = "View Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,9 +255,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B53DBEF71B5D3AB600665CDA /* Main.storyboard in Resources */,
+				B53DBF231B5D3AFA00665CDA /* Images.xcassets in Resources */,
 				B53DBEFC1B5D3AB600665CDA /* LaunchScreen.xib in Resources */,
-				B53DBEF91B5D3AB600665CDA /* Images.xcassets in Resources */,
+				B53DBF331B5D3D0C00665CDA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,9 +275,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B53DBEF41B5D3AB600665CDA /* ViewController.swift in Sources */,
+				B53DBF1C1B5D3AFA00665CDA /* AxisView.swift in Sources */,
+				B53DBF311B5D3CDE00665CDA /* TimeViewController.swift in Sources */,
+				B53DBF1D1B5D3AFA00665CDA /* BezierHandles.swift in Sources */,
+				B53DBF1F1B5D3AFA00665CDA /* CalcTime.swift in Sources */,
+				B53DBF221B5D3AFA00665CDA /* DotPreview.swift in Sources */,
+				B53DBF351B5D3F1000665CDA /* BezierViewController.swift in Sources */,
+				B53DBF241B5D3AFA00665CDA /* RealtimeViewController.swift in Sources */,
+				B53DBF261B5D3AFA00665CDA /* ViewController.swift in Sources */,
+				B53DBF211B5D3AFA00665CDA /* CustomTextField.swift in Sources */,
 				B53DBEF21B5D3AB600665CDA /* SliderControl.xcdatamodeld in Sources */,
 				B53DBEEF1B5D3AB600665CDA /* AppDelegate.swift in Sources */,
+				B53DBF2C1B5D3BA500665CDA /* BTDiscovery.swift in Sources */,
+				B53DBF2D1B5D3BA500665CDA /* BTService.swift in Sources */,
+				B53DBF371B5E0AD400665CDA /* Timelapse.swift in Sources */,
+				B53DBF251B5D3AFA00665CDA /* TransitionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,14 +312,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B53DBEF51B5D3AB600665CDA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B53DBEF61B5D3AB600665CDA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B53DBEFA1B5D3AB600665CDA /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
