@@ -230,7 +230,7 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate {
         let sliderImage = UIImage(named: "Bar")
         
         activeViewController = timeViewController
-        containerView.removeFromSuperview()
+        
         
         // ASSIGN TEXTFIELDS
         
@@ -384,7 +384,7 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate {
         
         framerate = framrateText.text.toInt()!
         
-        timelapse  = Timelapse(name: "MyTimelapse", playTimeInSeconds: playTime, recTimeInSeconds: recTime, framerate:self.framerate, startPosition: 0, endPosition: 900)
+        timelapse  = Timelapse(name: "MyTimelapse", playTimeInSeconds: playTime, recTimeInSeconds: recTime, framerate:self.framerate, startPosition: 0, endPosition: 1000)
         self.displayInterval.text = "\(timelapse.interval)"+" sec"
         
         println(timelapse.description())

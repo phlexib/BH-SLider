@@ -11,8 +11,8 @@ import UIKit
 class AxisView: UIView {
     
     let context = UIGraphicsGetCurrentContext()
-    var cpOne = CGPoint (x: 30,y: 30)
-    var cpTwo = CGPoint(x: 270,y: 270)
+    var cpOne = CGPoint (x: 100,y: 100)
+    var cpTwo = CGPoint(x: 200,y: 200)
     var size = CGSize(width:300, height: 300)
     
 
@@ -45,16 +45,16 @@ class AxisView: UIView {
     
     
     
-    func cubicBezier (positionPoint:CGFloat , start : CGFloat , c1 : CGFloat , c2 : CGFloat , end : CGFloat) ->CGFloat{
-        
-        let t_ = CGFloat(1.0 - positionPoint)
-        let tt_ = CGFloat(t_ * t_)
-        let ttt_ = CGFloat (t_ * t_ * t_)
-        let tt = CGFloat (positionPoint * positionPoint)
-        let ttt = CGFloat(positionPoint * positionPoint * positionPoint)
-        
-        return start * ttt_ + 3.0 *  c1 * tt_ * positionPoint + c2 * t_ * tt + end * ttt
-    }
+//    func cubicBezier (positionPoint:CGFloat , start : CGFloat , c1 : CGFloat , c2 : CGFloat , end : CGFloat) ->CGFloat{
+//        
+//        let t_ = CGFloat(1.0 - positionPoint)
+//        let tt_ = CGFloat(t_ * t_)
+//        let ttt_ = CGFloat (t_ * t_ * t_)
+//        let tt = CGFloat (positionPoint * positionPoint)
+//        let ttt = CGFloat(positionPoint * positionPoint * positionPoint)
+//        
+//        return start * ttt_ + 3.0 *  c1 * tt_ * positionPoint + c2 * t_ * tt + end * ttt
+//    }
     
 
 }

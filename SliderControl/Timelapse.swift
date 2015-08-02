@@ -23,9 +23,9 @@ class Timelapse{
     var bezierArray = [Float]()
     var bezierStepArray = [AnyObject]()
     
-    var stepIncrement : Float {
+    var stepIncrement : Int {
         get{
-            return Float(distance/numberOfShot)
+            return Int(distance/(numberOfShot))
         }
     }
     
@@ -82,10 +82,10 @@ class Timelapse{
     }
     
     func makeLinearStepsArray() {
-        linearStepArray.append(Float(self.startPosition))
-        for shot in 1..<numberOfShot-1{
-            let newStep = Float(self.startPosition)+(Float(shot) * stepIncrement)
-            linearStepArray.append(newStep)
+        //linearStepArray.append(Float(self.startPosition))
+        for shot in 0..<numberOfShot-1{
+            let newStep = Int(self.startPosition)+(Int(shot) * stepIncrement)
+            linearStepArray.append(Float(newStep))
         }
         linearStepArray.append(Float(self.endPosition))
         print(linearStepArray)

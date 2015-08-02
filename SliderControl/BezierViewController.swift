@@ -145,11 +145,12 @@ class BezierViewController: UIViewController {
             println("BEZIERSTEP ARRAY IS = \(timelapse.bezierStepArray) AND HAS \(timelapse.bezierStepArray.count)")
             println("CGFLOAT ARRAY IS = \(cgFloatArray) AND HAS \(cgFloatArray.count)")
             
-           self.dotView.positionArray = timelapse.bezierStepArray as! [Float]
-           self.dotView.makePointArray(cgFloatArray)
+           
 //            self.dotView.intervalPoint = CGFloat (timelapse.stepIncrement)
-            self.dotView.setNeedsDisplay()
-            self.dotView.setNeedsLayout()
+                        
+        
+            
+            
         }
     }
     

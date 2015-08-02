@@ -46,7 +46,10 @@ class DotPreview: UIView {
 
 
     override func drawRect(rect: CGRect) {
+        let dotContext = UIGraphicsGetCurrentContext()
+        let myColor = UIColor(red: 110/255 , green: 1, blue: 200/255, alpha: 1)
         let path = UIBezierPath()
+        CGContextSetStrokeColorWithColor(dotContext,myColor.CGColor)
         path.moveToPoint(CGPointMake(0, 10))
         path.addLineToPoint(CGPointMake(300, 10))
         path.lineWidth = 3
