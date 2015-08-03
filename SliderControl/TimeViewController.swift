@@ -8,9 +8,12 @@
 
 import UIKit
 
+let timeChangedeNotification = "kTimeChangedNotification"
+
 class TimeViewController: UIViewController {
     let realTimeViewController = RealtimeViewController()
     
+
     var hrString : String = "B"
     var minString : String = "M"
     var secString : String = "S"
@@ -18,72 +21,95 @@ class TimeViewController: UIViewController {
     var playTime :CalcTime = CalcTime(timeInSeconds: 10)
     var framerate : Int = 24
     var selectedTime : UIButton?
-    
+    var selectedType : String = "RECTIME"
+       
     @IBOutlet weak var hrBtn: UIButton!
     @IBOutlet var mnBtn: UIButton!
     @IBOutlet weak var secBtn: UIButton!
     
     
-    @IBAction func backToMenu(sender: AnyObject) {
-    }
     
     
-    @IBAction func unwindToViewController (sender: UIStoryboardSegue){
-        var destViewController : RealtimeViewController = sender.destinationViewController as! RealtimeViewController
-        destViewController.recTime = recTime
-        destViewController.playTime = playTime
-        
-    }
+//    @IBAction func unwindToViewController (sender: UIStoryboardSegue){
+//        var destViewController : RealtimeViewController = sender.destinationViewController as! RealtimeViewController
+//        destViewController.recTime = recTime
+//        destViewController.playTime = playTime
+//        
+//    }
     
     
     @IBAction func minTime(sender: UIButton) {
         if selectedTime != nil{
+            var withTime = CalcTime(timeInSeconds: recTime.totalTime)
+            
+            if selectedType == "RECTIME"{
+                upDateText(recTime)
+                withTime = recTime
+            }
+            else if selectedType == "PLAYTIME"{
+                upDateText(playTime)
+                withTime = playTime
+            }
+            
+            
             switch selectedTime! {
             case hrBtn!:
-                recTime.subTime("hours")
+                withTime.subTime("hours")
                 //timelapseTime.formatTimeFromSec(timelapseTime.totalTime)
-                upDateText(recTime)
                 
             case mnBtn! :
-                recTime.subTime("minutes")
-                // timelapseTime.formatTimeFromSec(timelapseTime.totalTime)
-                upDateText(recTime)
+                withTime.subTime("minutes")
+                //timelapseTime.formatTimeFromSec(timelapseTime.totalTime)
+                
                 
             case secBtn! :
-                recTime.subTime("seconds")
+                withTime.subTime("seconds")
                 //timelapseTime.formatTimeFromSec(timelapseTime.totalTime)
-                upDateText(recTime)
+                
             default :
                 println("sender is not Hr , MN , SEC")
             }
+            NSNotificationCenter.defaultCenter().postNotificationName(timeChangedeNotification, object: self)
             
-            println(recTime.description())
-        }
-    }
+            sendTimeChangedNotification()
+            println(withTime.description())
+        }    }
     
     @IBAction func plusTime(sender: UIButton) {
         if selectedTime != nil{
+            var withTime = CalcTime(timeInSeconds: recTime.totalTime)
+            
+            if selectedType == "RECTIME"{
+                upDateText(recTime)
+                withTime = recTime
+                        }
+            else if selectedType == "PLAYTIME"{
+                upDateText(playTime)
+                withTime = playTime
+            }
+
             
         switch selectedTime! {
         case hrBtn!:
-            recTime.addTime("hours")
+           withTime.addTime("hours")
             //timelapseTime.formatTimeFromSec(timelapseTime.totalTime)
-            upDateText(recTime)
-            
+                
         case mnBtn! :
-            recTime.addTime("minutes")
+            withTime.addTime("minutes")
             //timelapseTime.formatTimeFromSec(timelapseTime.totalTime)
-            upDateText(recTime)
+            
             
         case secBtn! :
-            recTime.addTime("seconds")
+            withTime.addTime("seconds")
             //timelapseTime.formatTimeFromSec(timelapseTime.totalTime)
-            upDateText(recTime)
+            
         default :
             println("sender is not Hr , MN , SEC")
         }
-
-        println(recTime.description())
+        NSNotificationCenter.defaultCenter().postNotificationName(timeChangedeNotification, object: self)
+        
+        sendTimeChangedNotification()
+        println(withTime.description())
         }
     }
 
@@ -96,6 +122,11 @@ class TimeViewController: UIViewController {
         //selectedTime = sender
         selectedTime = sender
         println(selectedTime!.titleLabel!.text)
+        
+        
+        
+        
+        
         if selectedTime != nil{
             
         selectedTime!.setTitleColor(selectedColor, forState: UIControlState.Selected)
@@ -130,7 +161,6 @@ class TimeViewController: UIViewController {
     }
 
     func upDateText (withTime : CalcTime){
-        
         hrBtn.setTitle(withTime.strHours + " H", forState: UIControlState.Selected)
         hrBtn.setTitle(withTime.strHours + "H", forState: UIControlState.Normal)
         mnBtn.setTitle(withTime.strMinutes + "M", forState: UIControlState.Selected)
@@ -140,11 +170,47 @@ class TimeViewController: UIViewController {
         
     }
     
+    func sendTimeChangedNotification(){
+        switch selectedType {
+            case "RECTIME":
+                upDateText(recTime)
+            case "PLAYTIME":
+                upDateText(playTime)
+        default :
+            
+                upDateText(recTime)
+        }
+        
+        
+
+    }
     
+    func updateTypeNotification(notification: NSNotification){
+        
+        let notificationButton = notification.userInfo!["button"] as? UIButton
+        selectedType = notificationButton!.titleLabel!.text!
+        
+        switch selectedType {
+        case "RECTIME":
+            upDateText(recTime)
+        case "PLAYTIME":
+            upDateText(playTime)
+        default :
+            
+            upDateText(recTime)
+        }
+
+    }
+    
+    //MARK: - Runtime
     override func viewDidLoad() {
         super.viewDidLoad()
         
         upDateText(recTime)
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "sendTimeChangedNotification", name: timeChangedeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateTypeNotification:", name: timeTypeNotification, object: nil)
     }
 
     
@@ -166,5 +232,6 @@ class TimeViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        realTimeViewController.recTime = recTime
 }
 }

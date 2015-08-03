@@ -8,7 +8,9 @@
 
 import UIKit
 
-class RealtimeViewController: UIViewController, UITextFieldDelegate {
+let timeTypeNotification = "ktimeTypeNotification"
+
+class RealtimeViewController: UIViewController, UITextFieldDelegate{
     
     
     // MARK: - STORED VARIABLES
@@ -40,6 +42,7 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - viewControllers Variables
     
+   
     var timeViewController : TimeViewController?
     var bezierViewcontroller : BezierViewController?
     private var activeViewController: UIViewController? {
@@ -91,6 +94,11 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate {
     //// MARK: - IBACTIONS
     
     @IBAction func timeButtonSelected(sender: UIButton) {
+        self.view.addSubview(containerView)
+        activeViewController = timeViewController
+        
+
+        
         let selectedColor = UIColor(red: 0.2, green: 1, blue: 0.8, alpha: 1)
         let selectedBgColor = UIColor(white: 1, alpha: 0)
         
@@ -121,8 +129,9 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate {
         default :
             result="no btn selected"
         }
-        // self.view.addSubview(containerView)
-        activeViewController = timeViewController
+        let infoNotication  = ["button" : selectedTime!]
+        NSNotificationCenter.defaultCenter().postNotificationName(timeTypeNotification, object: self, userInfo : infoNotication)
+        
     }
     
     
@@ -230,7 +239,7 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate {
         let sliderImage = UIImage(named: "Bar")
         
         activeViewController = timeViewController
-        
+        self.containerView.removeFromSuperview()
         
         // ASSIGN TEXTFIELDS
         
@@ -255,12 +264,13 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate {
         previewPosition.setThumbImage(sliderImage, forState: UIControlState.Normal)
         
         // Watch Bluetooth connection
-       
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("connectionChanged:"), name: BLEServiceChangedStatusNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("hasNewPositionValue:"), name: PositionValueNotification, object: nil)
         // Start the Bluetooth discovery process
         btDiscoverySharedInstance
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateTimeNotification", name: timeChangedeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateTypeNotification", name: timeTypeNotification, object: nil)
     }
     
     deinit {
@@ -295,7 +305,6 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate {
         if(containerView != nil) {
             println(self.activeViewController)
             //timelapseTime = currentController.timelapseTime
-            
             self.removeInactiveViewController(timeViewController)
             containerView.removeFromSuperview()
         }
@@ -363,10 +372,20 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate {
             destViewController.framerate = framrateText.text.toInt()!
             destViewController.transitioningDelegate = self.transitionManager
             
+        case "containerSegue":
+            
+            let destViewController : TimeViewController = segue.destinationViewController as! TimeViewController
+            destViewController.recTime = recTime
+            destViewController.playTime = playTime
+            destViewController.framerate = framrateText.text.toInt()!
+            destViewController.transitioningDelegate = self.transitionManager
+
         case "curveView":
             var destViewController : BezierViewController = segue.destinationViewController as! BezierViewController
             destViewController.timelapse = self.timelapse
             destViewController.transitioningDelegate = self.transitionManager
+            
+        
         default:
             println("destination controller is not Bezier or Timeview")
         }
@@ -376,6 +395,21 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate {
     
     
     //MARK: - CUSTOM FUNCTIONS
+    
+    
+    func updateTimeNotification(){
+        setTimelapse()
+        self.displayRecTime.text = recTime.strHours + "h" + recTime.strMinutes + "m" + recTime.strSeconds + "s"
+        self.displayPlayTime.text = playTime.strHours + "h" + playTime.strMinutes + "m" + playTime.strSeconds + "s"
+        self.displayInterval.text = "\(timelapse.interval)"+" sec"
+            }
+    
+    func updateTypeNotification(){
+        self.displayRecTime.text = recTime.strHours + "h" + recTime.strMinutes + "m" + recTime.strSeconds + "s"
+        self.displayPlayTime.text = playTime.strHours + "h" + playTime.strMinutes + "m" + playTime.strSeconds + "s"
+        self.displayInterval.text = "\(timelapse.interval)"+" sec"
+
+    }
     
     func setTimelapse() {
         
@@ -390,6 +424,7 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate {
         println(timelapse.description())
     }
     
+
     
     func sendString(toSend: String){
         if !allowTX {

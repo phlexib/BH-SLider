@@ -251,7 +251,6 @@
                                 </state>
                                 <connections>
                                     <action selector="timeButtonSelected:" destination="F9F-xS-Uxs" eventType="touchUpInside" id="3GN-5O-SY4"/>
-                                    <segue destination="Cb7-EI-1Hw" kind="custom" identifier="timeView" id="fCa-R6-DZx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9s-DL-tZz">
@@ -276,6 +275,12 @@
                                     <action selector="timeButtonSelected:" destination="F9F-xS-Uxs" eventType="touchUpInside" id="gob-r8-1rj"/>
                                 </connections>
                             </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lmT-RI-mms">
+                                <rect key="frame" x="61" y="117" width="200" height="202"/>
+                                <connections>
+                                    <segue destination="Cb7-EI-1Hw" kind="embed" identifier="containerSegue" id="D56-G9-YRn"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.212890625" green="0.212890625" blue="0.212890625" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
@@ -360,6 +365,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="containerView" destination="lmT-RI-mms" id="cVs-7y-NZq"/>
                         <outlet property="displayInterval" destination="Gbn-TU-k9D" id="44Y-TW-OIU"/>
                         <outlet property="displayPlayTime" destination="sJL-dF-leo" id="5fi-WS-tSU"/>
                         <outlet property="displayRecTime" destination="tnb-fK-ot6" id="I58-uH-0xZ"/>
@@ -384,7 +390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ctt-ij-DYE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="403" y="1177"/>
+            <point key="canvasLocation" x="81" y="1057"/>
         </scene>
         <!--Bezier View Controller-->
         <scene sceneID="95x-hs-Lal">
@@ -478,11 +484,11 @@
                         <viewControllerLayoutGuide type="bottom" id="sI3-Sk-mkW"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="CUa-Qq-wH1">
-                        <rect key="frame" x="0.0" y="0.0" width="290" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cI-2E-Nja">
-                                <rect key="frame" x="11" y="132" width="120" height="40"/>
+                                <rect key="frame" x="0.0" y="132" width="100" height="40"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="26"/>
                                 <state key="normal" title="-">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -492,7 +498,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKn-EC-8Nf">
-                                <rect key="frame" x="178" y="132" width="120" height="40"/>
+                                <rect key="frame" x="100" y="132" width="100" height="40"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="26"/>
                                 <state key="normal" title="+">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -502,7 +508,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JiZ-tt-mVe" userLabel="hrBtn">
-                                <rect key="frame" x="52" y="46" width="50" height="50"/>
+                                <rect key="frame" x="16" y="46" width="50" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="00 H">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -512,7 +518,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTf-kP-XXa" userLabel="mnBtn">
-                                <rect key="frame" x="141" y="46" width="50" height="50"/>
+                                <rect key="frame" x="75" y="46" width="50" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="00 M">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -522,7 +528,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9h-gk-fvV" userLabel="secBtn">
-                                <rect key="frame" x="219" y="46" width="50" height="50"/>
+                                <rect key="frame" x="134" y="46" width="50" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="00 S">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -531,22 +537,12 @@
                                     <action selector="timeButtonSelected:" destination="Cb7-EI-1Hw" eventType="touchUpInside" id="AdS-ej-B4x"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIP-4q-CON">
-                                <rect key="frame" x="122" y="8" width="39" height="30"/>
-                                <state key="normal" title="Menu">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="backToMenu:" destination="Cb7-EI-1Hw" eventType="touchUpInside" id="VK5-kv-1II"/>
-                                    <segue destination="rT6-It-F4Y" kind="unwind" unwindAction="unwindToViewController:" id="p3u-Wq-Yir"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="290" height="200"/>
+                    <size key="freeformSize" width="200" height="200"/>
                     <connections>
                         <outlet property="hrBtn" destination="JiZ-tt-mVe" id="dM1-8p-t0d"/>
                         <outlet property="mnBtn" destination="jTf-kP-XXa" id="n65-5x-uzW"/>
@@ -554,9 +550,8 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Gl-lZ-uCg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="rT6-It-F4Y" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="830" y="1421"/>
+            <point key="canvasLocation" x="843" y="1358"/>
         </scene>
     </scenes>
 </document>
