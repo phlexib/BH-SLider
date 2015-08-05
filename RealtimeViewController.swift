@@ -42,7 +42,7 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate{
     
     // MARK: - viewControllers Variables
     
-   
+    
     var timeViewController : TimeViewController?
     var bezierViewcontroller : BezierViewController?
     private var activeViewController: UIViewController? {
@@ -97,13 +97,14 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate{
         self.view.addSubview(containerView)
         activeViewController = timeViewController
         
-
+        
         
         let selectedColor = UIColor(red: 0.2, green: 1, blue: 0.8, alpha: 1)
         let selectedBgColor = UIColor(white: 1, alpha: 0)
         
         selectedTime = sender
         selectedTime?.setTitleColor(selectedColor, forState: UIControlState.Selected)
+        selectedTime?.backgroundColor = selectedBgColor
         selectedTime?.setTitleShadowColor(selectedBgColor, forState: UIControlState.Selected)
         selectedTime?.setTitleShadowColor(selectedBgColor, forState: UIControlState.Highlighted)
         
@@ -189,6 +190,7 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate{
     }
     
     @IBAction func clearTimelapse(sender: UIButton) {
+        
     }
     
     
@@ -197,32 +199,6 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate{
     }
     
     @IBAction func showCurve(sender: AnyObject) {
-        //only apply the blur if the user hasn't disabled transparency effects
-        //        if !UIAccessibilityIsReduceTransparencyEnabled() {
-        //            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
-        //            let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        //            blurEffectView.frame = view.bounds //view is self.view in a UIViewController
-        //            view.addSubview(blurEffectView)
-        //
-        //            //if you have more UIViews on screen, use insertSubview:belowSubview: to place it underneath the lowest view
-        //            //add auto layout constraints so that the blur fills the screen upon rotating device
-        //            blurEffectView.setTranslatesAutoresizingMaskIntoConstraints(false)
-        //            view.addConstraint(NSLayoutConstraint(item: blurEffectView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0))
-        //            view.addConstraint(NSLayoutConstraint(item: blurEffectView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0))
-        //            view.addConstraint(NSLayoutConstraint(item: blurEffectView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0))
-        //            view.addConstraint(NSLayoutConstraint(item: blurEffectView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0))
-        //        } else {
-        //            view.backgroundColor = UIColor.blackColor()
-        //        }
-        //
-        //        let testFrame : CGRect = CGRectMake(10,200,300,200)
-        //        var testView : AxisView = AxisView(frame: testFrame)
-        //        testView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
-        //        testView.alpha=0.5
-        //        self.view.addSubview(testView)
-        
-        
-        
     }
     
     
@@ -252,8 +228,7 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate{
         playTime.totalTimeFromTime()
         
         
-        self.displayRecTime.text = recTime.strHours + "h" + recTime.strMinutes + "m" + recTime.strSeconds + "s"
-        self.displayPlayTime.text = playTime.strHours + "h" + playTime.strMinutes + "m" + playTime.strSeconds + "s"
+        updateDisplayText()
         
         // CREATE THE DOT VIEW
         let myArray  :Array<Float> = [0.0,10.0,20.0,40.0]
@@ -279,10 +254,7 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate{
     
     
     override func viewWillAppear(animated: Bool) {
-        
-        self.displayRecTime.text = recTime.strHours + "h" + recTime.strMinutes + "m" + recTime.strSeconds + "s"
-        self.displayPlayTime.text = playTime.strHours + "h" + playTime.strMinutes + "m" + playTime.strSeconds + "s"
-        self.displayInterval.text = "\(timelapse.interval)"+" sec"
+        updateDisplayText()
     }
     
     
@@ -379,13 +351,13 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate{
             destViewController.playTime = playTime
             destViewController.framerate = framrateText.text.toInt()!
             destViewController.transitioningDelegate = self.transitionManager
-
+            
         case "curveView":
             var destViewController : BezierViewController = segue.destinationViewController as! BezierViewController
             destViewController.timelapse = self.timelapse
             destViewController.transitioningDelegate = self.transitionManager
             
-        
+            
         default:
             println("destination controller is not Bezier or Timeview")
         }
@@ -396,20 +368,13 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate{
     
     //MARK: - CUSTOM FUNCTIONS
     
-    
-    func updateTimeNotification(){
-        setTimelapse()
+    func updateDisplayText(){
         self.displayRecTime.text = recTime.strHours + "h" + recTime.strMinutes + "m" + recTime.strSeconds + "s"
         self.displayPlayTime.text = playTime.strHours + "h" + playTime.strMinutes + "m" + playTime.strSeconds + "s"
         self.displayInterval.text = "\(timelapse.interval)"+" sec"
-            }
-    
-    func updateTypeNotification(){
-        self.displayRecTime.text = recTime.strHours + "h" + recTime.strMinutes + "m" + recTime.strSeconds + "s"
-        self.displayPlayTime.text = playTime.strHours + "h" + playTime.strMinutes + "m" + playTime.strSeconds + "s"
-        self.displayInterval.text = "\(timelapse.interval)"+" sec"
-
+        
     }
+    
     
     func setTimelapse() {
         
@@ -424,7 +389,7 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate{
         println(timelapse.description())
     }
     
-
+    
     
     func sendString(toSend: String){
         if !allowTX {
@@ -540,6 +505,18 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate{
         timerTXDelay?.invalidate()
         self.timerTXDelay = nil
     }
+    
+    // MARK: - NOTIFICATION FUNCTIONS
+    
+    func updateTimeNotification(){
+        setTimelapse()
+        updateDisplayText()
+    }
+    
+    func updateTypeNotification(){
+        updateDisplayText()
+    }
+    
     
     // MARK: - TextFieldDelegate
     //// TEXTFIELD DELEGATE

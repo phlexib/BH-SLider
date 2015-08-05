@@ -16,10 +16,8 @@ class BezierViewController: UIViewController {
     @IBOutlet weak var bezierFrame: AxisView!
     @IBOutlet weak var cpTwoView: UIView!
     @IBOutlet weak var cpOneView: UIView!
-    @IBOutlet weak var labelPassed: UILabel!
     @IBOutlet weak var dotView: DotPreview!
     
-    var labelText = String()
     var numberOfShots = Int()
     var timelapse : Timelapse = Timelapse(recTime: 3600, playTime: 10)
     var stepsArray : Array<Float> = []
@@ -28,7 +26,6 @@ class BezierViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        labelPassed.text = labelText
         numberOfShots = timelapse.numberOfShot
         
         stepsArray=timelapse.linearStepArray

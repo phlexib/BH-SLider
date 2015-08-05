@@ -11,9 +11,10 @@ import UIKit
 let timeChangedeNotification = "kTimeChangedNotification"
 
 class TimeViewController: UIViewController {
-    let realTimeViewController = RealtimeViewController()
     
-
+    //MARK: - STORED VARIABLES
+    
+    let realTimeViewController = RealtimeViewController()
     var hrString : String = "B"
     var minString : String = "M"
     var secString : String = "S"
@@ -22,7 +23,7 @@ class TimeViewController: UIViewController {
     var framerate : Int = 24
     var selectedTime : UIButton?
     var selectedType : String = "RECTIME"
-       
+    
     @IBOutlet weak var hrBtn: UIButton!
     @IBOutlet var mnBtn: UIButton!
     @IBOutlet weak var secBtn: UIButton!
@@ -30,13 +31,9 @@ class TimeViewController: UIViewController {
     
     
     
-//    @IBAction func unwindToViewController (sender: UIStoryboardSegue){
-//        var destViewController : RealtimeViewController = sender.destinationViewController as! RealtimeViewController
-//        destViewController.recTime = recTime
-//        destViewController.playTime = playTime
-//        
-//    }
     
+    
+    // MARK: - CUSTOM FUNCTIONS
     
     @IBAction func minTime(sender: UIButton) {
         if selectedTime != nil{
@@ -82,37 +79,39 @@ class TimeViewController: UIViewController {
             if selectedType == "RECTIME"{
                 upDateText(recTime)
                 withTime = recTime
-                        }
+            }
             else if selectedType == "PLAYTIME"{
                 upDateText(playTime)
                 withTime = playTime
             }
-
             
-        switch selectedTime! {
-        case hrBtn!:
-           withTime.addTime("hours")
-            //timelapseTime.formatTimeFromSec(timelapseTime.totalTime)
+            
+            switch selectedTime! {
+            case hrBtn!:
+                withTime.addTime("hours")
+                //timelapseTime.formatTimeFromSec(timelapseTime.totalTime)
                 
-        case mnBtn! :
-            withTime.addTime("minutes")
-            //timelapseTime.formatTimeFromSec(timelapseTime.totalTime)
+            case mnBtn! :
+                withTime.addTime("minutes")
+                //timelapseTime.formatTimeFromSec(timelapseTime.totalTime)
+                
+                
+            case secBtn! :
+                withTime.addTime("seconds")
+                //timelapseTime.formatTimeFromSec(timelapseTime.totalTime)
+                
+            default :
+                println("sender is not Hr , MN , SEC")
+            }
+            NSNotificationCenter.defaultCenter().postNotificationName(timeChangedeNotification, object: self)
             
-            
-        case secBtn! :
-            withTime.addTime("seconds")
-            //timelapseTime.formatTimeFromSec(timelapseTime.totalTime)
-            
-        default :
-            println("sender is not Hr , MN , SEC")
-        }
-        NSNotificationCenter.defaultCenter().postNotificationName(timeChangedeNotification, object: self)
-        
-        sendTimeChangedNotification()
-        println(withTime.description())
+            sendTimeChangedNotification()
+            println(withTime.description())
         }
     }
-
+    
+    
+    
     
     
     @IBAction func timeButtonSelected(sender: UIButton) {
@@ -129,37 +128,37 @@ class TimeViewController: UIViewController {
         
         if selectedTime != nil{
             
-        selectedTime!.setTitleColor(selectedColor, forState: UIControlState.Selected)
-        selectedTime!.setTitleShadowColor(selectedBgColor, forState: UIControlState.Selected)
-        selectedTime!.setTitleShadowColor(selectedBgColor, forState: UIControlState.Highlighted)
-        
-        var result : String = ""
-        switch selectedTime! {
-        case hrBtn :
-            hrBtn.selected = true
-            mnBtn.selected = false
-            secBtn.selected = false
-            result = "Hour Selected"
+            selectedTime!.setTitleColor(selectedColor, forState: UIControlState.Selected)
+            selectedTime!.setTitleShadowColor(selectedBgColor, forState: UIControlState.Selected)
+            selectedTime!.setTitleShadowColor(selectedBgColor, forState: UIControlState.Highlighted)
             
-            
-        case mnBtn :
-            mnBtn.selected = true
-            hrBtn.selected = false
-            secBtn.selected = false
-            result = "Minutes Selected"
-        
-        case secBtn :
-            secBtn.selected = true
-            hrBtn.selected = false
-            mnBtn.selected = false
-            result = "Seconds Selected"
-        default :
-            result="no btn selected"
-        }
-        println(result)
+            var result : String = ""
+            switch selectedTime! {
+            case hrBtn :
+                hrBtn.selected = true
+                mnBtn.selected = false
+                secBtn.selected = false
+                result = "Hour Selected"
+                
+                
+            case mnBtn :
+                mnBtn.selected = true
+                hrBtn.selected = false
+                secBtn.selected = false
+                result = "Minutes Selected"
+                
+            case secBtn :
+                secBtn.selected = true
+                hrBtn.selected = false
+                mnBtn.selected = false
+                result = "Seconds Selected"
+            default :
+                result="no btn selected"
+            }
+            println(result)
         }
     }
-
+    
     func upDateText (withTime : CalcTime){
         hrBtn.setTitle(withTime.strHours + " H", forState: UIControlState.Selected)
         hrBtn.setTitle(withTime.strHours + "H", forState: UIControlState.Normal)
@@ -172,17 +171,17 @@ class TimeViewController: UIViewController {
     
     func sendTimeChangedNotification(){
         switch selectedType {
-            case "RECTIME":
-                upDateText(recTime)
-            case "PLAYTIME":
-                upDateText(playTime)
+        case "RECTIME":
+            upDateText(recTime)
+        case "PLAYTIME":
+            upDateText(playTime)
         default :
             
-                upDateText(recTime)
+            upDateText(recTime)
         }
         
         
-
+        
     }
     
     func updateTypeNotification(notification: NSNotification){
@@ -199,10 +198,13 @@ class TimeViewController: UIViewController {
             
             upDateText(recTime)
         }
-
+        
     }
     
+    
+    
     //MARK: - Runtime
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -212,7 +214,7 @@ class TimeViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "sendTimeChangedNotification", name: timeChangedeNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateTypeNotification:", name: timeTypeNotification, object: nil)
     }
-
+    
     
     override func viewWillDisappear(animated: Bool) {
         println("view will disappear")
@@ -226,12 +228,12 @@ class TimeViewController: UIViewController {
     }
     
     
-
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         realTimeViewController.recTime = recTime
-}
+    }
 }
