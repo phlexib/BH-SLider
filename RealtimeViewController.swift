@@ -378,12 +378,11 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate{
     
     func setTimelapse() {
         
-        let sceneName : String = sceneNameText.text!
-        
+        let sceneName : String = sceneNameText.text!    
         
         framerate = framrateText.text.toInt()!
         
-        timelapse  = Timelapse(name: "MyTimelapse", playTimeInSeconds: playTime, recTimeInSeconds: recTime, framerate:self.framerate, startPosition: 0, endPosition: 1000)
+        timelapse  = Timelapse(name: "MyTimelapse", playTimeInSeconds: playTime, recTimeInSeconds: recTime, framerate:self.framerate, startPosition: 0, endPosition: 10000)
         self.displayInterval.text = "\(timelapse.interval)"+" sec"
         
         println(timelapse.description())

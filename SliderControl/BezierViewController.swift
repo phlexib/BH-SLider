@@ -28,7 +28,7 @@ class BezierViewController: UIViewController {
         
         numberOfShots = timelapse.numberOfShot
         
-        stepsArray=timelapse.linearStepArray
+        stepsArray=timelapse.linearPosistionArray
         println(stepsArray)
         self.dotView.positionArray = stepsArray
         self.dotView.makePointArray(stepsArray)

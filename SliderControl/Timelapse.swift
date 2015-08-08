@@ -19,13 +19,13 @@ class Timelapse{
     var framerate : Int = 24
     var recTime : CalcTime
     var playTime : CalcTime
-    var linearStepArray = [Float]()
+    var linearPosistionArray = [Float]()
     var bezierArray = [Float]()
     var bezierStepArray = [AnyObject]()
     
-    var stepIncrement : Int {
+    var stepIncrement : Float {
         get{
-            return Int(distance/(numberOfShot))
+            return Float(distance)/Float(numberOfShot-1)
         }
     }
     
@@ -67,7 +67,10 @@ class Timelapse{
         self.numberOfShot = playTime.totalTime * framerate
         self.distance
         self.stepIncrement
-        print("distance is \(distance) and stepIncrement is \(stepIncrement)")
+        
+        println("distance is \(distance)")
+        println ("stepIncrement is \(stepIncrement)")
+        
         makeLinearStepsArray()
         
     }
@@ -82,13 +85,17 @@ class Timelapse{
     }
     
     func makeLinearStepsArray() {
-        //linearStepArray.append(Float(self.startPosition))
-        for shot in 0..<numberOfShot-1{
-            let newStep = Int(self.startPosition)+(Int(shot) * stepIncrement)
-            linearStepArray.append(Float(newStep))
+        linearPosistionArray.append(Float(self.startPosition))
+        
+        for shot in 1..<numberOfShot{
+            
+            let newStep = Float(self.startPosition) + Float(shot) * stepIncrement
+            linearPosistionArray.append(round(newStep))
         }
-        linearStepArray.append(Float(self.endPosition))
-        print(linearStepArray)
+        //linearPosistionArray.append(Float(self.endPosition))
+        println(linearPosistionArray)
+        println(linearPosistionArray.count)
+        
     }
 
     func makeBezierStepArray(linearArray : Array<Float>){
