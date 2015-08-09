@@ -7,6 +7,13 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="DINPro-Bold.otf">
+            <string>DINPro-Bold</string>
+            <string>DINPro-Bold</string>
+            <string>DINPro-Bold</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Realtime control-->
         <scene sceneID="2f0-U7-r1V">
@@ -213,10 +220,6 @@
                                     <segue destination="lgl-TG-oFX" kind="custom" identifier="curveView" id="b3o-D8-XFu"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NYB-oO-o8j" customClass="DotPreview" customModule="SliderControl" customModuleProvider="target">
-                                <rect key="frame" x="38" y="236" width="246" height="31"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="framerate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ifo-fJ-mde">
                                 <rect key="frame" x="16" y="169" width="84" height="21"/>
                                 <color key="tintColor" red="0.56078431370000004" green="0.74117647060000003" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
@@ -244,10 +247,10 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2b-5K-BVW">
                                 <rect key="frame" x="25" y="59" width="67" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="DINPro-Bold" family="DINPro" pointSize="12"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="RECTIME">
-                                    <color key="titleColor" red="0.1333333333" green="0.64705882349999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -256,10 +259,10 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9s-DL-tZz">
                                 <rect key="frame" x="231" y="59" width="67" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="DINPro-Bold" family="DINPro" pointSize="12"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="INTERVAL">
-                                    <color key="titleColor" red="0.1333333333" green="0.64705882349999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -268,10 +271,10 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efa-Ct-WJH">
                                 <rect key="frame" x="128" y="59" width="67" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="DINPro-Bold" family="DINPro" pointSize="12"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="PLAYTIME">
-                                    <color key="titleColor" red="0.1333333333" green="0.64705882349999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -284,8 +287,12 @@
                                     <segue destination="Cb7-EI-1Hw" kind="embed" identifier="containerSegue" id="D56-G9-YRn"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LGn-zn-aok">
+                                <rect key="frame" x="0.0" y="565" width="340" height="4"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.212890625" green="0.212890625" blue="0.212890625" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.08235294118" green="0.078431372550000003" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="dSM-Rz-smV" firstAttribute="leading" secondItem="Otj-Tq-nzl" secondAttribute="leading" id="0Il-wM-E8F"/>
@@ -368,11 +375,11 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="connectionView" destination="LGn-zn-aok" id="ekv-JH-Fhz"/>
                         <outlet property="containerView" destination="lmT-RI-mms" id="cVs-7y-NZq"/>
                         <outlet property="displayInterval" destination="Gbn-TU-k9D" id="44Y-TW-OIU"/>
                         <outlet property="displayPlayTime" destination="sJL-dF-leo" id="5fi-WS-tSU"/>
                         <outlet property="displayRecTime" destination="tnb-fK-ot6" id="I58-uH-0xZ"/>
-                        <outlet property="dotView" destination="NYB-oO-o8j" id="vI0-eK-FRY"/>
                         <outlet property="fastBackward" destination="YOP-8r-Jck" id="Qw8-UV-a6m"/>
                         <outlet property="fastForward" destination="CVO-yZ-8dy" id="zVd-xc-3J3"/>
                         <outlet property="framrateText" destination="NDY-yf-7x7" id="9R3-HI-GW0"/>

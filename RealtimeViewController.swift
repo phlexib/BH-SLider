@@ -66,6 +66,7 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var setEndLimit: UIButton!
     @IBOutlet weak var setOutPoint: UIButton!
     @IBOutlet weak var jogView: UIView!
+    @IBOutlet weak var connectionView: UIView!
     
     
     @IBOutlet weak var recTimeBtn: UIButton!
@@ -77,7 +78,7 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var sceneNameText: UITextField!
     @IBOutlet weak var framrateText: UITextField!
     
-    @IBOutlet weak var dotView: DotPreview!
+    // @IBOutlet weak var dotView: DotPreview!
     
     //    @IBAction func positionSliderChanged(sender: UISlider) {
     //        var intPosition:Int = Int(positionSlider.value)
@@ -144,25 +145,25 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate{
     
     @IBAction func buttonPressed(sender: UIButton) {
         var multiplierDirection : Int = 0
-        var directionString = "forward"
+        var directionString = "FW"
         
         switch sender {
         case fastBackward :
             multiplierDirection = 2
-            directionString = "backward"
+            directionString = "BW"
         case fastForward :
             multiplierDirection = 2
-            directionString = "forward"
+            directionString = "FW"
         case slowBackward :
             multiplierDirection = 1
-            directionString = "backward"
+            directionString = "BW"
         case slowForward :
             multiplierDirection = 1
-            directionString = "forward"
+            directionString = "FW"
             
         default :
             multiplierDirection = 0
-            directionString = "forward"
+            directionString = "FW"
         }
         
         let speedString = "\(directionString) \(multiplierDirection)"
@@ -231,8 +232,8 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate{
         updateDisplayText()
         
         // CREATE THE DOT VIEW
-        let myArray  :Array<Float> = [0.0,10.0,20.0,40.0]
-        self.dotView.positionArray = myArray
+//        let myArray  :Array<Float> = [0.0,10.0,20.0,40.0]
+//        self.dotView.positionArray = myArray
         
         
         // Set thumb image on slider
@@ -396,7 +397,7 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate{
         }
         // Send position to BLE Shield (if service exists and is connected)
         if let bleService = btDiscoverySharedInstance.bleService {
-            let stringToSend: String = toSend+"!"
+            let stringToSend: String = toSend
             bleService.writeString(stringToSend)
             
             // 5
@@ -418,7 +419,7 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate{
         }
         // Send position to BLE Shield (if service exists and is connected)
         if let bleService = btDiscoverySharedInstance.bleService {
-            let stringToSend: String = toSend+"!"
+            let stringToSend: String = "!"+toSend
             bleService.writeString(stringToSend)
             
             // 5
@@ -464,11 +465,12 @@ class RealtimeViewController: UIViewController, UITextFieldDelegate{
             if let isConnected: Bool = userInfo["isConnected"] {
                 if isConnected {
                     self.imgBluetoothStatus.image = UIImage(named: "Bluetooth_Connected")
-                    
+                    self.connectionView.backgroundColor = UIColor(red: 0, green: 1, blue: 0, alpha: 1)
                     // Send current slider position
                     //self.sendPosition(UInt8( self.positionSlider.value))
                 } else {
                     self.imgBluetoothStatus.image = UIImage(named: "Bluetooth_Disconnected")
+                    self.connectionView.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
                 }
             }
         });

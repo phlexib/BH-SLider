@@ -7,6 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B52742FB1B7799110058C710 /* DINPro-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = B52742F61B7799110058C710 /* DINPro-Black.otf */; };
+		B52742FC1B7799110058C710 /* DINPro-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = B52742F61B7799110058C710 /* DINPro-Black.otf */; };
+		B52742FD1B7799110058C710 /* DINPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B52742F71B7799110058C710 /* DINPro-Bold.otf */; };
+		B52742FE1B7799110058C710 /* DINPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B52742F71B7799110058C710 /* DINPro-Bold.otf */; };
+		B52742FF1B7799110058C710 /* DINPro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B52742F81B7799110058C710 /* DINPro-Light.otf */; };
+		B52743001B7799110058C710 /* DINPro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B52742F81B7799110058C710 /* DINPro-Light.otf */; };
+		B52743011B7799110058C710 /* DINPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B52742F91B7799110058C710 /* DINPro-Medium.otf */; };
+		B52743021B7799110058C710 /* DINPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B52742F91B7799110058C710 /* DINPro-Medium.otf */; };
+		B52743031B7799110058C710 /* DINPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B52742FA1B7799110058C710 /* DINPro-Regular.otf */; };
+		B52743041B7799110058C710 /* DINPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B52742FA1B7799110058C710 /* DINPro-Regular.otf */; };
+		B52743091B7799220058C710 /* DINNextRoundedLTPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B52743051B7799220058C710 /* DINNextRoundedLTPro-Bold.otf */; };
+		B527430A1B7799220058C710 /* DINNextRoundedLTPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B52743051B7799220058C710 /* DINNextRoundedLTPro-Bold.otf */; };
+		B527430B1B7799220058C710 /* DINNextRoundedLTPro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B52743061B7799220058C710 /* DINNextRoundedLTPro-Light.otf */; };
+		B527430C1B7799220058C710 /* DINNextRoundedLTPro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B52743061B7799220058C710 /* DINNextRoundedLTPro-Light.otf */; };
+		B527430D1B7799220058C710 /* DINNextRoundedLTPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B52743071B7799220058C710 /* DINNextRoundedLTPro-Medium.otf */; };
+		B527430E1B7799220058C710 /* DINNextRoundedLTPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B52743071B7799220058C710 /* DINNextRoundedLTPro-Medium.otf */; };
+		B527430F1B7799220058C710 /* DINNextRoundedLTPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B52743081B7799220058C710 /* DINNextRoundedLTPro-Regular.otf */; };
+		B52743101B7799220058C710 /* DINNextRoundedLTPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B52743081B7799220058C710 /* DINNextRoundedLTPro-Regular.otf */; };
+		B52743131B77A57F0058C710 /* RefMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = B52743121B77A57F0058C710 /* RefMenu.png */; };
+		B52743141B77A57F0058C710 /* RefMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = B52743121B77A57F0058C710 /* RefMenu.png */; };
+		B52743161B77A7E30058C710 /* TimelapseLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = B52743151B77A7E30058C710 /* TimelapseLogo.png */; };
+		B52743171B77A7E30058C710 /* TimelapseLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = B52743151B77A7E30058C710 /* TimelapseLogo.png */; };
+		B527431D1B77C81B0058C710 /* cameraIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B527431B1B77C81B0058C710 /* cameraIcon.png */; };
+		B527431E1B77C81B0058C710 /* cameraIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B527431B1B77C81B0058C710 /* cameraIcon.png */; };
+		B527431F1B77C81B0058C710 /* timelapseIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B527431C1B77C81B0058C710 /* timelapseIcon.png */; };
+		B52743201B77C81B0058C710 /* timelapseIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B527431C1B77C81B0058C710 /* timelapseIcon.png */; };
+		B52743251B780A700058C710 /* StyleKitName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52743241B780A700058C710 /* StyleKitName.swift */; };
+		B52743261B780A700058C710 /* StyleKitName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52743241B780A700058C710 /* StyleKitName.swift */; };
+		B52743281B780F1F0058C710 /* TimelapseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52743271B780F1F0058C710 /* TimelapseMenuViewController.swift */; };
+		B52743291B780F1F0058C710 /* TimelapseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52743271B780F1F0058C710 /* TimelapseMenuViewController.swift */; };
 		B53DBEEF1B5D3AB600665CDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53DBEEE1B5D3AB600665CDA /* AppDelegate.swift */; };
 		B53DBEF21B5D3AB600665CDA /* SliderControl.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B53DBEF01B5D3AB600665CDA /* SliderControl.xcdatamodeld */; };
 		B53DBEFC1B5D3AB600665CDA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B53DBEFA1B5D3AB600665CDA /* LaunchScreen.xib */; };
@@ -39,6 +69,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B52742F61B7799110058C710 /* DINPro-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINPro-Black.otf"; sourceTree = "<group>"; };
+		B52742F71B7799110058C710 /* DINPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINPro-Bold.otf"; sourceTree = "<group>"; };
+		B52742F81B7799110058C710 /* DINPro-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINPro-Light.otf"; sourceTree = "<group>"; };
+		B52742F91B7799110058C710 /* DINPro-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINPro-Medium.otf"; sourceTree = "<group>"; };
+		B52742FA1B7799110058C710 /* DINPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINPro-Regular.otf"; sourceTree = "<group>"; };
+		B52743051B7799220058C710 /* DINNextRoundedLTPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINNextRoundedLTPro-Bold.otf"; sourceTree = "<group>"; };
+		B52743061B7799220058C710 /* DINNextRoundedLTPro-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINNextRoundedLTPro-Light.otf"; sourceTree = "<group>"; };
+		B52743071B7799220058C710 /* DINNextRoundedLTPro-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINNextRoundedLTPro-Medium.otf"; sourceTree = "<group>"; };
+		B52743081B7799220058C710 /* DINNextRoundedLTPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINNextRoundedLTPro-Regular.otf"; sourceTree = "<group>"; };
+		B52743121B77A57F0058C710 /* RefMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RefMenu.png; sourceTree = "<group>"; };
+		B52743151B77A7E30058C710 /* TimelapseLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimelapseLogo.png; sourceTree = "<group>"; };
+		B527431B1B77C81B0058C710 /* cameraIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraIcon.png; sourceTree = "<group>"; };
+		B527431C1B77C81B0058C710 /* timelapseIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timelapseIcon.png; sourceTree = "<group>"; };
+		B52743241B780A700058C710 /* StyleKitName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleKitName.swift; sourceTree = "<group>"; };
+		B52743271B780F1F0058C710 /* TimelapseMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelapseMenuViewController.swift; sourceTree = "<group>"; };
 		B53DBEE91B5D3AB500665CDA /* SliderControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SliderControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B53DBEED1B5D3AB600665CDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B53DBEEE1B5D3AB600665CDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +127,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B52742F51B7798F60058C710 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				B527431B1B77C81B0058C710 /* cameraIcon.png */,
+				B527431C1B77C81B0058C710 /* timelapseIcon.png */,
+				B52743121B77A57F0058C710 /* RefMenu.png */,
+				B52743051B7799220058C710 /* DINNextRoundedLTPro-Bold.otf */,
+				B52743061B7799220058C710 /* DINNextRoundedLTPro-Light.otf */,
+				B52743071B7799220058C710 /* DINNextRoundedLTPro-Medium.otf */,
+				B52743081B7799220058C710 /* DINNextRoundedLTPro-Regular.otf */,
+				B52742F61B7799110058C710 /* DINPro-Black.otf */,
+				B52742F71B7799110058C710 /* DINPro-Bold.otf */,
+				B52742F81B7799110058C710 /* DINPro-Light.otf */,
+				B52742F91B7799110058C710 /* DINPro-Medium.otf */,
+				B52742FA1B7799110058C710 /* DINPro-Regular.otf */,
+			);
+			name = Ressources;
+			sourceTree = "<group>";
+		};
+		B52743111B77A5040058C710 /* DesignClasses */ = {
+			isa = PBXGroup;
+			children = (
+				B52743241B780A700058C710 /* StyleKitName.swift */,
+			);
+			name = DesignClasses;
+			sourceTree = "<group>";
+		};
 		B53DBEE01B5D3AB500665CDA = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +175,7 @@
 		B53DBEEB1B5D3AB500665CDA /* SliderControl */ = {
 			isa = PBXGroup;
 			children = (
+				B52742F51B7798F60058C710 /* Ressources */,
 				B53DBF391B5E0EA300665CDA /* Custom Classes */,
 				B53DBF381B5E0E8A00665CDA /* ViewControllers */,
 				B53DBF321B5D3D0C00665CDA /* Main.storyboard */,
@@ -145,6 +218,7 @@
 		B53DBF381B5E0E8A00665CDA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B52743271B780F1F0058C710 /* TimelapseMenuViewController.swift */,
 				B53DBF341B5D3F1000665CDA /* BezierViewController.swift */,
 				B53DBF301B5D3CDE00665CDA /* TimeViewController.swift */,
 				B53DBF191B5D3AFA00665CDA /* RealtimeViewController.swift */,
@@ -166,11 +240,13 @@
 		B53DBF3A1B5E0EBA00665CDA /* View Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B52743111B77A5040058C710 /* DesignClasses */,
 				B53DBF1A1B5D3AFA00665CDA /* TransitionManager.swift */,
 				B53DBF111B5D3AFA00665CDA /* AxisView.swift */,
 				B53DBF121B5D3AFA00665CDA /* BezierHandles.swift */,
 				B53DBF161B5D3AFA00665CDA /* CustomTextField.swift */,
 				B53DBF171B5D3AFA00665CDA /* DotPreview.swift */,
+				B52743151B77A7E30058C710 /* TimelapseLogo.png */,
 			);
 			name = "View Classes";
 			sourceTree = "<group>";
@@ -255,9 +331,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B527431D1B77C81B0058C710 /* cameraIcon.png in Resources */,
+				B527431F1B77C81B0058C710 /* timelapseIcon.png in Resources */,
 				B53DBF231B5D3AFA00665CDA /* Images.xcassets in Resources */,
+				B527430F1B7799220058C710 /* DINNextRoundedLTPro-Regular.otf in Resources */,
+				B52743131B77A57F0058C710 /* RefMenu.png in Resources */,
+				B527430D1B7799220058C710 /* DINNextRoundedLTPro-Medium.otf in Resources */,
+				B52742FB1B7799110058C710 /* DINPro-Black.otf in Resources */,
+				B52742FF1B7799110058C710 /* DINPro-Light.otf in Resources */,
 				B53DBEFC1B5D3AB600665CDA /* LaunchScreen.xib in Resources */,
+				B52743161B77A7E30058C710 /* TimelapseLogo.png in Resources */,
+				B52743031B7799110058C710 /* DINPro-Regular.otf in Resources */,
 				B53DBF331B5D3D0C00665CDA /* Main.storyboard in Resources */,
+				B52743091B7799220058C710 /* DINNextRoundedLTPro-Bold.otf in Resources */,
+				B527430B1B7799220058C710 /* DINNextRoundedLTPro-Light.otf in Resources */,
+				B52742FD1B7799110058C710 /* DINPro-Bold.otf in Resources */,
+				B52743011B7799110058C710 /* DINPro-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +354,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B52743041B7799110058C710 /* DINPro-Regular.otf in Resources */,
+				B52743201B77C81B0058C710 /* timelapseIcon.png in Resources */,
+				B52742FE1B7799110058C710 /* DINPro-Bold.otf in Resources */,
+				B52742FC1B7799110058C710 /* DINPro-Black.otf in Resources */,
+				B527431E1B77C81B0058C710 /* cameraIcon.png in Resources */,
+				B527430A1B7799220058C710 /* DINNextRoundedLTPro-Bold.otf in Resources */,
+				B52743101B7799220058C710 /* DINNextRoundedLTPro-Regular.otf in Resources */,
+				B52743021B7799110058C710 /* DINPro-Medium.otf in Resources */,
+				B52743141B77A57F0058C710 /* RefMenu.png in Resources */,
+				B527430C1B7799220058C710 /* DINNextRoundedLTPro-Light.otf in Resources */,
+				B52743001B7799110058C710 /* DINPro-Light.otf in Resources */,
+				B527430E1B7799220058C710 /* DINNextRoundedLTPro-Medium.otf in Resources */,
+				B52743171B77A7E30058C710 /* TimelapseLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +384,7 @@
 				B53DBF221B5D3AFA00665CDA /* DotPreview.swift in Sources */,
 				B53DBF351B5D3F1000665CDA /* BezierViewController.swift in Sources */,
 				B53DBF241B5D3AFA00665CDA /* RealtimeViewController.swift in Sources */,
+				B52743281B780F1F0058C710 /* TimelapseMenuViewController.swift in Sources */,
 				B53DBF261B5D3AFA00665CDA /* ViewController.swift in Sources */,
 				B53DBF211B5D3AFA00665CDA /* CustomTextField.swift in Sources */,
 				B53DBEF21B5D3AB600665CDA /* SliderControl.xcdatamodeld in Sources */,
@@ -290,6 +393,7 @@
 				B53DBF2D1B5D3BA500665CDA /* BTService.swift in Sources */,
 				B53DBF371B5E0AD400665CDA /* Timelapse.swift in Sources */,
 				B53DBF251B5D3AFA00665CDA /* TransitionManager.swift in Sources */,
+				B52743251B780A700058C710 /* StyleKitName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +402,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B53DBF081B5D3AB600665CDA /* SliderControlTests.swift in Sources */,
+				B52743291B780F1F0058C710 /* TimelapseMenuViewController.swift in Sources */,
+				B52743261B780A700058C710 /* StyleKitName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +583,7 @@
 				B53DBF0D1B5D3AB600665CDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B53DBF0E1B5D3AB600665CDA /* Build configuration list for PBXNativeTarget "SliderControlTests" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +592,7 @@
 				B53DBF101B5D3AB600665CDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
